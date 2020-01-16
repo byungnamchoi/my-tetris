@@ -1,0 +1,44 @@
+{{sort sprites}}
+
+{{#each sprites}}
+@{{../spritesheet.name}}-{{name}} : {{returnpx offset_x}} {{returnpx offset_y}} {{returnpx width}} {{returnpx height}} ;
+{{/each}}
+
+{{#spritesheet}}
+.{{name}}-background-image(){
+  background-image: url({{escaped_image}});
+}
+.{{name}}-background-size(){
+  background-size: {{returnpx width}} {{returnpx height}};
+}
+{{/spritesheet}}
+
+{{#each sprites}}
+.{{../spritesheet.name}}-{{name}},
+{{/each}}
+{{#spritesheet}}
+.{{name}} {
+  .{{name}}-background-image;
+  .{{name}}-background-size;
+	background-repeat: no-repeat;
+	display: inline-block;
+	background-color: transparent;
+	vertical-align: top;
+	border: none;
+	-webkit-appearance: none;
+}
+{{/spritesheet}}
+
+.sprite(@sprite) {
+	@sprite-offset-x: extract(@sprite, 1);
+	@sprite-offset-y: extract(@sprite, 2);
+	width: extract(@sprite, 3);
+	height: extract(@sprite, 4);
+	background-position: @sprite-offset-x @sprite-offset-y;
+}
+
+{{#each sprites}}
+.{{../spritesheet.name}}-{{name}} {
+	.sprite(@{{../spritesheet.name}}-{{name}});
+}
+{{/each}}

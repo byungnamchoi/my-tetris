@@ -1,0 +1,69 @@
+
+
+@sprite-menu-menu_0 : 0px -135px 164px 17px ;
+@sprite-menu-menu_0_active : 0px -108px 165px 17px ;
+@sprite-menu-menu_1 : 0px -189px 151px 17px ;
+@sprite-menu-menu_1_active : 0px -162px 153px 17px ;
+@sprite-menu-menu_2 : 0px -27px 213px 17px ;
+@sprite-menu-menu_2_active : 0px 0px 214px 17px ;
+@sprite-menu-menu_3 : 0px -81px 188px 17px ;
+@sprite-menu-menu_3_active : 0px -54px 190px 17px ;
+
+.sprite-menu-background-image(){
+  background-image: url(../images/sprite/menu.png);
+}
+.sprite-menu-background-size(){
+  background-size: 214px 206px;
+}
+
+.sprite-menu-menu_0,
+.sprite-menu-menu_0_active,
+.sprite-menu-menu_1,
+.sprite-menu-menu_1_active,
+.sprite-menu-menu_2,
+.sprite-menu-menu_2_active,
+.sprite-menu-menu_3,
+.sprite-menu-menu_3_active,
+.sprite-menu {
+  .sprite-menu-background-image;
+  .sprite-menu-background-size;
+	background-repeat: no-repeat;
+	display: inline-block;
+	background-color: transparent;
+	vertical-align: top;
+	border: none;
+	-webkit-appearance: none;
+}
+
+.sprite(@sprite) {
+	@sprite-offset-x: extract(@sprite, 1);
+	@sprite-offset-y: extract(@sprite, 2);
+	width: extract(@sprite, 3);
+	height: extract(@sprite, 4);
+	background-position: @sprite-offset-x @sprite-offset-y;
+}
+
+.sprite-menu-menu_0 {
+	.sprite(@sprite-menu-menu_0);
+}
+.sprite-menu-menu_0_active {
+	.sprite(@sprite-menu-menu_0_active);
+}
+.sprite-menu-menu_1 {
+	.sprite(@sprite-menu-menu_1);
+}
+.sprite-menu-menu_1_active {
+	.sprite(@sprite-menu-menu_1_active);
+}
+.sprite-menu-menu_2 {
+	.sprite(@sprite-menu-menu_2);
+}
+.sprite-menu-menu_2_active {
+	.sprite(@sprite-menu-menu_2_active);
+}
+.sprite-menu-menu_3 {
+	.sprite(@sprite-menu-menu_3);
+}
+.sprite-menu-menu_3_active {
+	.sprite(@sprite-menu-menu_3_active);
+}
