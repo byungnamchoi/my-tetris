@@ -7,7 +7,7 @@
     "@babel/runtime-corejs3": "^7.7.6",
     "imagesloaded": "^4.1.4",
     "jquery": "^3.4.1",
-    "jquery-ui": "^1.12.1"
+    "jquery-ui": "^1.13.2"
   },
   "scripts": {
     "clean": "gulp clean",
